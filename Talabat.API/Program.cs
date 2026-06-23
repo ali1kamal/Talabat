@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 //using Microsoft.IdentityModel.Tokens;
-//using StackExchange.Redis;
+using StackExchange.Redis;
 //using System.Text;
 using Talabat.API.Errors;
 using Talabat.API.Helpers;
@@ -30,11 +30,11 @@ builder.Services.AddDbContext<StoreContext>(options =>
 });
 
 
-/*builder.Services.AddSingleton<IConnectionMultiplexer>(c =>
+builder.Services.AddSingleton<IConnectionMultiplexer>(c =>
 {
     var configuration = ConfigurationOptions.Parse(builder.Configuration.GetConnectionString("Redis"));
     return ConnectionMultiplexer.Connect(configuration);
-});*/
+});
 
 /*builder.Services.AddDbContext<AppIdentityDbContext>(options =>
 {
