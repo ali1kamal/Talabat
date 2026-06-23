@@ -1,15 +1,15 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
-//using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 //using Microsoft.IdentityModel.Tokens;
 //using StackExchange.Redis;
 //using System.Text;
-//using Talabat.API.Errors;
-//using Talabat.API.Helpers;
+using Talabat.API.Errors;
+using Talabat.API.Helpers;
 //using Talabat.API.MiddleWares;
-// Talabat.BLL.Interfaces;
-//using Talabat.BLL.Repositories;
+using Talabat.BLL.Interfaces;
+using Talabat.BLL.Repositories;
 using Talabat.DAL.Data;
 //using Talabat.DAL.Entities.identity;
 //using Talabat.DAL.identity;
@@ -69,15 +69,15 @@ builder.Services.AddAuthentication(options =>
     );*/
 
 
-//builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 //builder.Services.AddScoped(typeof(IBasketRepository), typeof(BasketRepository));
 //builder.Services.AddScoped(typeof(ITokenService), typeof(TokenServices));
 
 
-//builder.Services.AddAutoMapper(typeof(MappingProfiles));
+builder.Services.AddAutoMapper(typeof(MappingProfiles));
 
 
-/*builder.Services.Configure<ApiBehaviorOptions>(options =>
+builder.Services.Configure<ApiBehaviorOptions>(options =>
 {
     options.InvalidModelStateResponseFactory = actionContext =>
     {
@@ -91,7 +91,7 @@ builder.Services.AddAuthentication(options =>
         };
         return new BadRequestObjectResult(errorResponse);
     };
-});*/
+});
 var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {

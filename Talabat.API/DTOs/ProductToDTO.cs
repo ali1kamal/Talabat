@@ -1,4 +1,4 @@
-﻿/*using Talabat.DAL.Entities;
+﻿using Talabat.DAL.Entities;
 
 namespace Talabat.API.DTOs
 {
@@ -15,4 +15,3 @@ namespace Talabat.API.DTOs
         public int ProductBrandId { get; set; } 
     }
 }
-*/
