@@ -1,5 +1,4 @@
-﻿/*
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Reflection.Metadata.Ecma335;
@@ -37,7 +36,7 @@ namespace Talabat.API.Controllers
         public async Task<ActionResult> DeleteBasket(string id) 
         {
             /*await _basketRepository.DeleteBasketAsync(id);
-            return Ok();*//*
+            return Ok();*/
             var deleted = await _basketRepository.DeleteBasketAsync(id);
             if (!deleted)
                 return NotFound();// Return 404 if the basket was not found
@@ -46,4 +45,4 @@ namespace Talabat.API.Controllers
         }
     }
 }
-*/
+

@@ -1,4 +1,4 @@
-﻿/*using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using Talabat.DAL.Entities;
 
 namespace Talabat.API.DTOs
@@ -10,4 +10,3 @@ namespace Talabat.API.DTOs
         public List<BasketItemDto> Items { get; set; } = new List<BasketItemDto>();
     }
 }
-*/
