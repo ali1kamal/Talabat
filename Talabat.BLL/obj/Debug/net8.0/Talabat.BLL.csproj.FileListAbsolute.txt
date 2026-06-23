@@ -1,0 +1,15 @@
+C:\Users\ALI\source\repos\Talabat.API\Talabat.BLL\bin\Debug\net8.0\Talabat.BLL.deps.json
+C:\Users\ALI\source\repos\Talabat.API\Talabat.BLL\bin\Debug\net8.0\Talabat.BLL.dll
+C:\Users\ALI\source\repos\Talabat.API\Talabat.BLL\bin\Debug\net8.0\Talabat.BLL.pdb
+C:\Users\ALI\source\repos\Talabat.API\Talabat.BLL\bin\Debug\net8.0\Talabat.DAL.dll
+C:\Users\ALI\source\repos\Talabat.API\Talabat.BLL\bin\Debug\net8.0\Talabat.DAL.pdb
+C:\Users\ALI\source\repos\Talabat.API\Talabat.BLL\obj\Debug\net8.0\Talabat.BLL.csproj.AssemblyReference.cache
+C:\Users\ALI\source\repos\Talabat.API\Talabat.BLL\obj\Debug\net8.0\Talabat.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ALI\source\repos\Talabat.API\Talabat.BLL\obj\Debug\net8.0\Talabat.BLL.AssemblyInfoInputs.cache
+C:\Users\ALI\source\repos\Talabat.API\Talabat.BLL\obj\Debug\net8.0\Talabat.BLL.AssemblyInfo.cs
+C:\Users\ALI\source\repos\Talabat.API\Talabat.BLL\obj\Debug\net8.0\Talabat.BLL.csproj.CoreCompileInputs.cache
+C:\Users\ALI\source\repos\Talabat.API\Talabat.BLL\obj\Debug\net8.0\Talabat..D84E1B69.Up2Date
+C:\Users\ALI\source\repos\Talabat.API\Talabat.BLL\obj\Debug\net8.0\Talabat.BLL.dll
+C:\Users\ALI\source\repos\Talabat.API\Talabat.BLL\obj\Debug\net8.0\refint\Talabat.BLL.dll
+C:\Users\ALI\source\repos\Talabat.API\Talabat.BLL\obj\Debug\net8.0\Talabat.BLL.pdb
+C:\Users\ALI\source\repos\Talabat.API\Talabat.BLL\obj\Debug\net8.0\ref\Talabat.BLL.dll
