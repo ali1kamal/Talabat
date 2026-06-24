@@ -2,16 +2,16 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-//using Microsoft.IdentityModel.Tokens;
+using Microsoft.IdentityModel.Tokens;
 using StackExchange.Redis;
-//using System.Text;
+using System.Text;
 using Talabat.API.Errors;
 using Talabat.API.Helpers;
-//using Talabat.API.MiddleWares;
+using Talabat.API.MiddleWares;
 using Talabat.BLL.Interfaces;
 using Talabat.BLL.Repositories;
 using Talabat.DAL.Data;
-//using Talabat.DAL.Entities.identity;
+using Talabat.DAL.Entities.identity;
 using Talabat.DAL.identity;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -41,7 +41,7 @@ builder.Services.AddDbContext<AppIdentityDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnection"));
 });
 
-/*builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
+builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
 {
     options.Password.RequireDigit = true;
     options.Password.RequireLowercase = true;
@@ -66,12 +66,12 @@ builder.Services.AddAuthentication(options =>
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Key"])),
         ValidateLifetime = true,
     }
-    );*/
+    );
 
 
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-//builder.Services.AddScoped(typeof(IBasketRepository), typeof(BasketRepository));
-//builder.Services.AddScoped(typeof(ITokenService), typeof(TokenServices));
+builder.Services.AddScoped(typeof(IBasketRepository), typeof(BasketRepository));
+builder.Services.AddScoped(typeof(ITokenService), typeof(TokenServices));
 
 
 builder.Services.AddAutoMapper(typeof(MappingProfiles));
@@ -101,10 +101,10 @@ using (var scope = app.Services.CreateScope())
         var context = scope.ServiceProvider.GetRequiredService<StoreContext>();
         await context.Database.MigrateAsync();
         await StoreContextSeed.SeedAsync(context, loggerFactory);
-        //var identityContext =services.GetRequiredService<AppIdentityDbContext>();
-        //await identityContext.Database.MigrateAsync();
-        //var userManager = services.GetRequiredService<UserManager<AppUser>>();
-        //await AppIdentityContextSeed.SeedUserAsync(userManager);
+        var identityContext =services.GetRequiredService<AppIdentityDbContext>();
+        await identityContext.Database.MigrateAsync();
+        var userManager = services.GetRequiredService<UserManager<AppUser>>();
+        await AppIdentityContextSeed.SeedUserAsync(userManager);
     }
     catch (Exception ex)
     {
@@ -119,15 +119,15 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-//app.UseMiddleware<ExceptionMiddleware>();
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 
-//app.UseAuthentication();
+app.UseAuthentication();
 
-//app.UseAuthorization();
+app.UseAuthorization();
 
 app.MapControllers();
 

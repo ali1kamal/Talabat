@@ -1,4 +1,4 @@
-﻿/*
+﻿
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -20,7 +20,7 @@ namespace Talabat.BLL.Repositories
 
         public TokenServices(IConfiguration configuration)
         {
-             _configuration = configuration;
+            _configuration = configuration;
         }
         public async Task<string> GetToken(AppUser user, UserManager<AppUser> userManager)
         {
@@ -39,10 +39,10 @@ namespace Talabat.BLL.Repositories
                 audience: _configuration["JWT:audience"],
                 expires: DateTime.UtcNow.AddDays(double.Parse(_configuration["JWT:Duration"])),
                 claims: authClaims,
-                signingCredentials: new SigningCredentials(authkey,SecurityAlgorithms.HmacSha256Signature)
+                signingCredentials: new SigningCredentials(authkey, SecurityAlgorithms.HmacSha256Signature)
             );
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
     }
 }
-*/
+
