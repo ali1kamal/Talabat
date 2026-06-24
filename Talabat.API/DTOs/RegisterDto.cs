@@ -1,4 +1,4 @@
-﻿/*using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Talabat.API.DTOs
 {
@@ -31,4 +31,4 @@ namespace Talabat.API.DTOs
 
         public string ZipCode { get; set; }
     }
-}*/
+}

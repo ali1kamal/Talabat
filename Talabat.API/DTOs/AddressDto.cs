@@ -1,4 +1,4 @@
-﻿/*namespace Talabat.API.DTOs
+﻿namespace Talabat.API.DTOs
 {
     public class AddressDto
     {
@@ -10,4 +10,3 @@
         public string ZipCode { get; set; }
     }
 }
-*/
