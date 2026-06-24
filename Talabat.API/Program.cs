@@ -12,7 +12,7 @@ using Talabat.BLL.Interfaces;
 using Talabat.BLL.Repositories;
 using Talabat.DAL.Data;
 //using Talabat.DAL.Entities.identity;
-//using Talabat.DAL.identity;
+using Talabat.DAL.identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,10 +36,10 @@ builder.Services.AddSingleton<IConnectionMultiplexer>(c =>
     return ConnectionMultiplexer.Connect(configuration);
 });
 
-/*builder.Services.AddDbContext<AppIdentityDbContext>(options =>
+builder.Services.AddDbContext<AppIdentityDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnection"));
-});*/
+});
 
 /*builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
 {
